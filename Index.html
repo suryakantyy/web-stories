@@ -2,47 +2,93 @@
 <html ⚡>
 <head>
     <meta charset="utf-8">
-    <title>My Web Story</title>
+    <title>Explore the Future</title>
     <link rel="canonical" href="https://yourwebsite.com/story.html">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+    <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
     <style amp-custom>
         amp-story {
             font-family: 'Arial', sans-serif;
+        }
+        h1 {
+            font-size: 40px;
+            text-align: center;
+            color: #ffffff;
+            animation: fade-in 2s ease-in-out;
+        }
+        p {
+            font-size: 20px;
+            text-align: center;
+            color: #f8f8f8;
+        }
+        .cta-button {
+            display: block;
+            background-color: #ff6600;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 18px;
+            width: 200px;
+            margin: 20px auto;
         }
     </style>
 </head>
 <body>
     <amp-story standalone
-        title="My Custom Web Story"
+        title="Explore the Future"
         publisher="My Blog"
         publisher-logo-src="https://yourwebsite.com/logo.png"
         poster-portrait-src="https://yourwebsite.com/poster.jpg">
-        
+
+        <!-- Page 1: Introduction -->
         <amp-story-page id="page1">
             <amp-story-grid-layer template="fill">
-                <amp-img src="https://yourwebsite.com/image1.jpg" width="720" height="1280" layout="responsive"></amp-img>
+                <amp-img src="https://yourwebsite.com/futuristic-bg.jpg" width="720" height="1280" layout="responsive"></amp-img>
             </amp-story-grid-layer>
             <amp-story-grid-layer template="vertical">
-                <h1>Welcome to My Web Story</h1>
-                <p>This is a custom web story for Blogger.</p>
+                <h1>Welcome to the Future</h1>
+                <p>Swipe to discover what's coming next.</p>
             </amp-story-grid-layer>
         </amp-story-page>
 
+        <!-- Page 2: Animation Effect -->
         <amp-story-page id="page2">
             <amp-story-grid-layer template="fill">
-                <amp-img src="https://yourwebsite.com/image2.jpg" width="720" height="1280" layout="responsive"></amp-img>
+                <amp-img src="https://yourwebsite.com/tech-bg.jpg" width="720" height="1280" layout="responsive"></amp-img>
             </amp-story-grid-layer>
             <amp-story-grid-layer template="vertical">
-                <h2>Another Page</h2>
-                <p>You can add multiple pages to your story.</p>
+                <h1 id="animated-text">Technology is Evolving</h1>
+                <p>Artificial Intelligence, Robotics, and more.</p>
+            </amp-story-grid-layer>
+            <amp-animation id="fade-in-animation" layout="nodisplay">
+                <script type="application/json">
+                    {
+                        "duration": "1.5s",
+                        "fill": "both",
+                        "animations": [{
+                            "selector": "#animated-text",
+                            "keyframes": [{"opacity": "0"}, {"opacity": "1"}]
+                        }]
+                    }
+                </script>
+            </amp-animation>
+        </amp-story-page>
+
+        <!-- Page 3: Call-to-Action -->
+        <amp-story-page id="page3">
+            <amp-story-grid-layer template="fill">
+                <amp-img src="https://yourwebsite.com/final-bg.jpg" width="720" height="1280" layout="responsive"></amp-img>
+            </amp-story-grid-layer>
+            <amp-story-grid-layer template="vertical">
+                <h1>Want to Learn More?</h1>
+                <a href="https://adaaplus.com" class="cta-button">Visit My Blog</a>
             </amp-story-grid-layer>
         </amp-story-page>
 
-        <amp-story-page-outlink layout="nodisplay">
-            <a href="https://yourwebsite.com">Visit my Blog</a>
-        </amp-story-page-outlink>
     </amp-story>
 </body>
 </html>
